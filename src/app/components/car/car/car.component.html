@@ -22,6 +22,7 @@
     <td>{{car.modelYear}}</td>
     <td>{{car.dailyPrice}}</td>
     <td>{{car.description}}</td>
-    <a [routerLink]="['cars/carDetail', car.id]" class="btn btn-primary btn-sm">Detaylar</a>
+    <td><button routerLink="/cars/carDetail/{{car.id}}" type="button" class="btn btn-sm">Detaylar</button></td>
+    <!-- <a [routerLink]="['cars/carDetail', car.id]" class="btn btn-primary btn-sm">Detaylar</a> -->
   </tr>
 </table>
