@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 
@@ -13,7 +14,7 @@ export class CarComponent {
   dataLoaded = false;
   filterText="";
 
-  constructor(private carService:CarService, private activatedRoute:ActivatedRoute){ }
+  constructor(private carService:CarService, private activatedRoute:ActivatedRoute,private toastrService:ToastrService,){ }
   ngOnInit():void{
     this.activatedRoute.params.subscribe(params => {
       if (params["brandId"]) {

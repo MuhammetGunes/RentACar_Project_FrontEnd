@@ -6,6 +6,8 @@ import { CarDetailComponent } from './components/carDetail/car-detail/car-detail
 const routes: Routes = [
   {path:"",pathMatch:"full", component:CarComponent},
   {path:"cars", component:CarComponent},
+  {path:"cars/brands/all-brands", component:CarComponent},
+  {path:"cars/colors/all-colors", component:CarComponent},
   {path:"cars/colors/:colorId", component:CarComponent},
   {path:"cars/brands/:brandId", component:CarComponent},
   {path:"cars/carDetail/:carId", component:CarDetailComponent}

@@ -12,6 +12,7 @@ export class ColorComponent {
   currentColor: Color;
   dataLoaded = false;
   filterText="";
+  selectedColor="";
 
   constructor(private colorService:ColorService){ }
   ngOnInit():void{

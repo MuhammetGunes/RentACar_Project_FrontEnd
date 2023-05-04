@@ -10,13 +10,16 @@
   <div *ngIf="filterText.length>2" class="alert alert-success">
     {{filterText}} markasını aradınız..
   </div>
-  <li (click)="cleanCurrentBrand()" [class]="getAllBrandClass()" routerLink = "/cars">Tüm Markalar</li>
-  <li (click)="setCurrentBrand(brand)"
-  routerLink = "/cars/brands/{{brand.brandId}}"
-  [class]="getCurrentBrandClass(brand)"
-  *ngFor ="let brand of brands | filterBrandPipe:filterText">
-  {{brand.brandName}}
-  </li>
+
+
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example" [(ngModel)]="selectedBrand" 
+  routerLink = "/cars/brands/{{selectedBrand}}">
+    <option selected [ngValue]="null">Marka seçiniz.</option>
+    <option (click)="cleanCurrentBrand()" [class]="getAllBrandClass()" routerLink = "/cars" value="all-brands">Tüm Markalar</option>
+    <option (click)="setCurrentBrand(brand)"
+            [class]="getCurrentBrandClass(brand)"
+            *ngFor ="let brand of brands | filterBrandPipe:filterText" [value]="brand.brandId">{{brand.brandName}}</option>
+  </select>
 </ul>
 
-<h5 *ngIf="currentBrand">{{currentBrand.brandName}} seçtiniz.</h5>
+<!-- <h5 *ngIf="currentBrand">{{currentBrand.brandName}} seçtiniz.</h5> -->

@@ -10,13 +10,16 @@
   <div *ngIf="filterText.length>2" class="alert alert-success">
     {{filterText}} rengini aradınız..
   </div>
-  <li (click)="cleanCurrentColor()" [class]="getAllColorClass()" routerLink = "/cars">Tüm Renkler</li>
-  <li (click)="setCurrentColor(color)"
-  [class]="getCurrentColorClass(color)"
-  routerLink = "/cars/colors/{{color.colorId}}"
-  *ngFor="let color of colors | filterColorPipe:filterText">
-  {{color.colorName}}</li>
+
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example" [(ngModel)]="selectedColor" routerLink = "/cars/colors/{{selectedColor}}">
+
+    <option selected [ngValue]="null">Renk seçiniz.</option>
+    <option (click)="cleanCurrentColor()" [class]="getAllColorClass()" value="all-colors">Tüm Renkler</option>
+    <option (click)="setCurrentColor(color)"
+    [class]="getCurrentColorClass(color)"
+    *ngFor="let color of colors | filterColorPipe:filterText" [value]="color.colorId">{{color.colorName}}</option>
+  </select>
 </ul>
 
-<h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5>
+<!-- <h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5> -->
 
