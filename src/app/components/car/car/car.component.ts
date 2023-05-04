@@ -11,6 +11,7 @@ import { CarService } from 'src/app/services/car.service';
 export class CarComponent {
   cars:Car[] = [];
   dataLoaded = false;
+  filterText="";
 
   constructor(private carService:CarService, private activatedRoute:ActivatedRoute){ }
   ngOnInit():void{

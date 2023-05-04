@@ -4,11 +4,17 @@
 
 <ul class="list-group">
   <li class="list-group-item list-group-item-success text-center h5">Markalar</li>
+  <div class="mb-3">
+    <input type="text" id="filterText" [(ngModel)]="filterText" class="form-control" id="exampleFormControlInput1" placeholder="Marka ismi giriniz..">
+  </div>
+  <div *ngIf="filterText.length>2" class="alert alert-success">
+    {{filterText}} markasını aradınız..
+  </div>
   <li (click)="cleanCurrentBrand()" [class]="getAllBrandClass()" routerLink = "/cars">Tüm Markalar</li>
   <li (click)="setCurrentBrand(brand)"
   routerLink = "/cars/brands/{{brand.brandId}}"
   [class]="getCurrentBrandClass(brand)"
-  *ngFor ="let brand of brands">
+  *ngFor ="let brand of brands | filterBrandPipe:filterText">
   {{brand.brandName}}
   </li>
 </ul>

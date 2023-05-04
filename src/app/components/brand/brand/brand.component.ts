@@ -11,6 +11,7 @@ export class BrandComponent {
   brands:Brand[] = [];
   currentBrand:Brand;
   dataLoaded = false;
+  filterText="";
 
   constructor(private brandService:BrandService){ }
   ngOnInit():void{
