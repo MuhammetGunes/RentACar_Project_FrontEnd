@@ -1,0 +1,18 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div *ngIf="dataLoaded==true" class="alert alert-danger" role="alert">
+      Alınan Ödemeler
+    </div>
+    <table *ngIf="dataLoaded==true" class="table">
+      <thead>
+        <tr>
+          <th>İsim Soyisim</th>
+          <th>Kart Numarası</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let payment of payments">
+        <td>{{payment.fullName}}</td>
+        <td>{{payment.cardNumber}}</td>
+      </tr>
+    </table>
