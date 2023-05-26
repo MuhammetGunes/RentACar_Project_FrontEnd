@@ -10,7 +10,7 @@ import { CarComponent } from './components/car/car/car.component';
 import { ColorComponent } from './components/color/color/color.component';
 import { RentalComponent } from './components/rental/rental/rental.component';
 import { CustomerComponent } from './components/customer/customer/customer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NaviComponent } from './components/navi/navi/navi.component';
 import { CarDetailComponent } from './components/carDetail/car-detail/car-detail.component';
 import { CarImageComponent } from './components/car-image/car-image.component';
@@ -25,6 +25,8 @@ import { ColorAddComponent } from './components/color-add/color-add.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { PaymentAddComponent } from './components/payment-add/payment-add.component';
+import { LoginComponent } from './login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +47,7 @@ import { PaymentAddComponent } from './components/payment-add/payment-add.compon
     CarAddComponent,
     PaymentComponent,
     PaymentAddComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,9 @@ import { PaymentAddComponent } from './components/payment-add/payment-add.compon
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
