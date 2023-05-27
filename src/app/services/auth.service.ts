@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { LoginModel } from '../models/loginModel';
 import { TokenModel } from '../models/tokenModel';
+import { Observable } from 'rxjs';
+import { RegisterModel } from '../models/registerModel';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +18,14 @@ export class AuthService {
   }
 
   isAuthenticated(){
-    if(localStorage.getItem){
+    if(localStorage.getItem("token")){
       return true;
     }else{
       return false;
     }
+  }
+
+  register(registerModel:RegisterModel){
+    return this.httpClient.post(this.apiUrl+"register",registerModel)
   }
 }
