@@ -28,6 +28,7 @@ import { PaymentAddComponent } from './components/payment-add/payment-add.compon
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register.component';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,10 @@ import { RegisterComponent } from './components/register/register.component';
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true
-  }],
+  },
+  { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+  JwtHelperService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

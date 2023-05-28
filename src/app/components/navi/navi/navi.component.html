@@ -37,6 +37,7 @@
 
       <ul *ngIf="isAuthenticated()" class="navbar-nav mr-right">
         <form class="d-flex">
+          <a *ngIf="dataLoaded" class="navbar-brand" href="/profile">{{user.firstName}} {{user.lastName}}</a>
           <a (click)="logout()" class="navbar-brand text-danger" href="/login">Çıkış Yap</a>
           <!-- <button class="btn btn-outline-success" type="submit">Search2</button> -->
         </form>

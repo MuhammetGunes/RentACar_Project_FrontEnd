@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent {
   loginForm:FormGroup;
-  constructor(private formBuilder:FormBuilder, private authService:AuthService, private toastrService:ToastrService ){}
+  constructor(private formBuilder:FormBuilder, private authService:AuthService, private toastrService:ToastrService, private router:Router ){}
   ngOnInit(): void {
     this.createLoginForm();
   }
@@ -30,6 +31,7 @@ export class LoginComponent {
         this.toastrService.info(response.message)
         this.toastrService.success("Giriş Yapıldı..")
         localStorage.setItem("token",response.data.token)
+        this.router.navigate(["/cars"])
       },responseError=>{
         this.toastrService.error(responseError.error)
       })
