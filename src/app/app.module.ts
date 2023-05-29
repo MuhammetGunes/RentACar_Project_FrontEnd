@@ -29,6 +29,9 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register.component';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +54,9 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     PaymentAddComponent,
     LoginComponent,
     RegisterComponent,
+    BrandUpdateComponent,
+    ColorUpdateComponent,
+    CarUpdateComponent,
   ],
   imports: [
     BrowserModule,

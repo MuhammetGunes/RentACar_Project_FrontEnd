@@ -12,6 +12,9 @@ import { PaymentAddComponent } from './components/payment-add/payment-add.compon
 import { PaymentComponent } from './components/payment/payment.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full", component:CarComponent},
@@ -22,10 +25,13 @@ const routes: Routes = [
   {path:"cars/colors/:colorId", component:CarComponent},
   {path:"cars/brands/:brandId", component:CarComponent},
   {path:"cars/carDetail/:carId", component:CarDetailComponent},
+  {path:"cars/update/:carId", component: CarUpdateComponent},
   {path:"rentals/add", component:RentalAddComponent},
   {path:"rentals/getrental", component:RentalComponent},
   {path:"brands/add", component:BrandAddComponent},
+  {path:"brands/update/:brandId", component:BrandUpdateComponent},
   {path:"colors/add", component:ColorAddComponent},
+  {path:"colors/update/:colorId", component:ColorUpdateComponent},
   {path:"payments/pay", component:PaymentAddComponent},
   {path:"payments/getall", component:PaymentComponent},
   {path:"login", component:LoginComponent},
