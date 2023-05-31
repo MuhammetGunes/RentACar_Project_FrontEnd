@@ -32,6 +32,7 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { UserComponent } from './components/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     BrandUpdateComponent,
     ColorUpdateComponent,
     CarUpdateComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
