@@ -1,13 +1,49 @@
-<body class="text-center">
-  <form class="form-signin" [formGroup]="loginForm">
-    <img class="mb-4" src='assets/images/logo.jpg' alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Giriş Yap</h1>
-    <label for="inputEmail" class="sr-only">Email</label>
-    <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Şifre</label>
-    <input type="password" id="inputPassword" class="form-control" formControlName="password" placeholder="Password" required>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="assets/images/arac.png" alt="">
+        <div class="text">
+          <span class="text-1">Yepyeni bir araç <br> yepyeni bir macera..</span>
+          <span class="text-2">Bu maceraya sende dahil ol</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Giriş Yap</div>
+          <form [formGroup]="loginForm">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <label for="inputEmail" class="sr-only">E-posta</label>
+    <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="E-posta adresiniz" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <label for="inputPassword" class="sr-only">Şifre</label>
+    <input type="password" id="inputPassword" class="form-control" formControlName="Şifre" placeholder="Şifre" required>
+              </div>
+              <!-- <div class="text"><a href="#">Forgot password?</a></div> -->
+              <div class="button input-box">
+                <input class="text-center" (click)="login()" value="Giriş Yap">
+              </div>
+              <div class="text sign-up-text">Hesabınız yok mu? <label (click)="goRegister()">Şimdi kayıt olun</label></div>
+            </div>
+        </form>
+      </div>
 
-    <button class="btn btn-lg btn-primary btn-block" (click)="login()">Giriş Yap</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2023-2024  </p>
-  </form>
+    </div>
+    </div>
+  </div>
 </body>
+</html>
