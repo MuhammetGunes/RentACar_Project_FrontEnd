@@ -16,7 +16,7 @@
     </form>
   </body> -->
 
-  <section class="vh-100" style="background-color: #eee;">
+  <!-- <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
@@ -43,4 +43,43 @@
       <button class="btn btn-lg btn-primary btn-block" (click)="register()">Kayıt Ol</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2023-2024  </p>
                       </div>
-                    </div>
+                    </div> -->
+
+
+                    <div class="login-page w-100">
+                      <div class="container">
+                          <div class="register-card">
+                              <div class="card-body">
+                                  <h1 class="company-logo" routerLink="/">Kayıt Olun</h1>
+                                  <hr>
+                                  <form class="mb-4 needs-validation" [formGroup]="registerForm" >
+                                      <div class="form-floating mb-3">
+                                          <input type="text" formControlName="firstName" class="form-control" id="floatingFirstname" placeholder="Ad">
+                                          <label for="floatingFirstname">Ad</label>
+                                      </div>
+                                      <div class="form-floating mb-3">
+                                          <input type="text" formControlName="lastName" class="form-control" id="floatingLastname" placeholder="Soyad">
+                                          <label for="floatingLastname">Soyad</label>
+                                      </div>
+                                      <div class="form-floating mb-3">
+                                          <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Eposta">
+                                          <label for="floatingInput">Eposta</label>
+                                      </div>
+                                      <div class="form-floating mb-3">
+                                          <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Şifre">
+                                          <label for="floatingPassword">Şifre</label>
+                                      </div>
+
+
+                                      <button (click)="register()" class="btn  register-btn">Kayıt Ol</button>
+
+                                  </form>
+
+                                  <div class="register">
+                                      Zaten bir hesabınız var mı?
+                                      <a routerLink="/login">Giriş yapmak için tıklayın.</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
