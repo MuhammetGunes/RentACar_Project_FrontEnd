@@ -33,6 +33,7 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { UserComponent } from './components/user/user.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { UserComponent } from './components/user/user.component';
     ColorUpdateComponent,
     CarUpdateComponent,
     UserComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,16 @@
+<app-navi></app-navi>
 <div class="container">
-  <app-navi></app-navi><br>
   <div class="row">
     <div class="col-md-3">
-      <li class="list-group-item h4 text-center">KATEGORİLER</li><br>
-      <app-brand></app-brand><br>
-      <app-color></app-color>
+      <br>
+        <app-brand></app-brand><br>
+        <app-color></app-color>
     </div>
-    <div class="col-md-9">
-      <router-outlet></router-outlet>
+
+    <div class="col-md-9 mt-3">
+        <router-outlet></router-outlet>
     </div>
   </div>
-
-
 </div>
+<br>
+<app-footer></app-footer>
