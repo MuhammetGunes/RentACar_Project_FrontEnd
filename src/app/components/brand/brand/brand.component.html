@@ -2,17 +2,17 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<ul class="list-group">
-  <li class="list-group-item list-group-item-success text-center h5">Markalar</li>
-  <div class="mb-3">
+<!-- <ul class="list-group"> -->
+  <!-- <li class="list-group-item text-center h5" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%);">Markalar</li> -->
+  <!-- <div class="mb-3">
     <input type="text" id="filterText" [(ngModel)]="filterText" class="form-control" id="exampleFormControlInput1" placeholder="Marka ismi giriniz..">
   </div>
   <div *ngIf="filterText.length>2" class="alert alert-success">
     {{filterText}} markasını aradınız..
-  </div>
+  </div> -->
 
 
-  <select class="form-select form-select-sm" aria-label=".form-select-sm example" [(ngModel)]="selectedBrand" 
+  <!-- <select class="form-select form-select-sm" aria-label=".form-select-sm example" [(ngModel)]="selectedBrand"
   routerLink = "/cars/brands/{{selectedBrand}}">
     <option selected [ngValue]="null">Marka seçiniz.</option>
     <option (click)="cleanCurrentBrand()" [class]="getAllBrandClass()" routerLink = "/cars" value="all-brands">Tüm Markalar</option>
@@ -20,6 +20,18 @@
             [class]="getCurrentBrandClass(brand)"
             *ngFor ="let brand of brands | filterBrandPipe:filterText" [value]="brand.brandId">{{brand.brandName}}</option>
   </select>
-</ul>
+</ul> -->
 
 <!-- <h5 *ngIf="currentBrand">{{currentBrand.brandName}} seçtiniz.</h5> -->
+
+
+<ul class="list-group">
+  <li class="list-group-item text-center h5" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%);">Markalar</li>
+  <li (click)="cleanCurrentBrand()" [class]="getAllBrandClass()" routerLink = "/cars">Tüm Markalar</li>
+  <li (click)="setCurrentBrand(brand)"
+  routerLink = "/cars/brands/{{brand.brandId}}"
+  [class]="getCurrentBrandClass(brand)"
+  *ngFor ="let brand of brands">
+  {{brand.brandName}}
+  </li>
+</ul>

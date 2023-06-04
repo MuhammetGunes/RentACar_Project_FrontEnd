@@ -26,29 +26,32 @@
   </div>
 </div> -->
 
-<div class="row">
-  <div class="col-md-6">
+<div class="col-md-12">
+  <li class="list-group list-group-item text-center h5 mb-3">Araç Filtreleyerek Dilediğiniz Araca Daha Hızlı Ulaşın..</li>
+</div>
+<div class="row" style="margin-top: -40px;">
+  <div class="col-md-4">
 <app-brand></app-brand>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <app-color></app-color>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-4">
+    <li class="list-group list-group-item text-center h5 mb-3" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%);">Hızlı Araç Ara</li>
     <div class="mb-3">
       <input type="text" id="filterText" [(ngModel)]="filterText" class="form-control" id="exampleFormControlInput1" placeholder="Araç modeli giriniz..">
     </div>
-    <div *ngIf="filterText.length>2" class="alert alert-success">
+    <div *ngIf="filterText.length>0" class="alert alert-success">
       {{filterText}} modelini aradınız..
     </div>
   </div>
 </div>
 
 
-
-
 <div class="container-fluid bg-gradient p-5">
   <div id="row-div-style" class="row align-items-start text-center">
-     <div *ngFor="let car of cars" class="col-9 col-sm-3 princing-item blue">
+     <div *ngFor="let car of cars | filterCarPipe:filterText" class="col-9 col-sm-3 princing-item blue">
+
         <div class="pricing-divider ">
            <!-- <h3 class="text-light">{{ car.brandName }}</h3> -->
            <h4 class="my-0 display-4 text-light font-weight-normal mb-3"> {{ car.dailyPrice | currency:"₺" }}
@@ -67,7 +70,13 @@
               </path>
            </svg>
         </div>
-
+        <div id="CarImagesCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="text-center">
+              <img style="height: 170px; width: auto;" src="assets/images/Comingsoon.png" alt="">
+            </div>
+          </div>
+        </div>
         <div class="card-body bg-white mt-0 shadow">
            <ul class="list-unstyled mb-5 position-relative">
               <!-- <li><b>Renk: </b>{{ car.colorName }}</li> -->
@@ -77,5 +86,7 @@
            <button type="button" class="btn btn-lg btn-block  btn-custom"
            routerLink="/cars/carDetail/{{car.id}}">Detayları Gör</button>
         </div>
+        <hr>
+        <br><br>
      </div>
   </div>

@@ -2,16 +2,16 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<ul class="list-group">
-  <li class="list-group-item list-group-item-success text-center h5">Renkler</li>
-  <div class="mb-3">
+<!-- <ul class="list-group"> -->
+  <!-- <li class="list-group-item list-group-item-success text-center h5" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%);">Renkler</li> -->
+  <!-- <div class="mb-3">
     <input type="text" id="filterText" [(ngModel)]="filterText" class="form-control" id="exampleFormControlInput1" placeholder="Araç rengi giriniz..">
   </div>
   <div *ngIf="filterText.length>2" class="alert alert-success">
     {{filterText}} rengini aradınız..
-  </div>
+  </div> -->
 
-  <select class="form-select form-select-sm" aria-label=".form-select-sm example" [(ngModel)]="selectedColor" routerLink = "/cars/colors/{{selectedColor}}">
+  <!-- <select class="form-select form-select-sm" aria-label=".form-select-sm example" [(ngModel)]="selectedColor" routerLink = "/cars/colors/{{selectedColor}}">
 
     <option selected [ngValue]="null">Renk seçiniz.</option>
     <option (click)="cleanCurrentColor()" [class]="getAllColorClass()" value="all-colors">Tüm Renkler</option>
@@ -19,7 +19,16 @@
     [class]="getCurrentColorClass(color)"
     *ngFor="let color of colors | filterColorPipe:filterText" [value]="color.colorId">{{color.colorName}}</option>
   </select>
-</ul>
+</ul> -->
 
 <!-- <h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5> -->
 
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success text-center h5" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%);">Renkler</li>
+  <li (click)="cleanCurrentColor()" [class]="getAllColorClass()" routerLink = "/cars">Tüm Renkler</li>
+  <li (click)="setCurrentColor(color)"
+  [class]="getCurrentColorClass(color)"
+  routerLink = "/cars/colors/{{color.colorId}}"
+  *ngFor="let color of colors">
+  {{color.colorName}}</li>
+</ul>
