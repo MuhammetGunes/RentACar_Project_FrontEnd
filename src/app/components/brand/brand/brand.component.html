@@ -25,8 +25,8 @@
 <!-- <h5 *ngIf="currentBrand">{{currentBrand.brandName}} seçtiniz.</h5> -->
 
 
-<ul class="list-group">
-  <li class="list-group-item text-center h5" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%);">Markalar</li>
+<!-- <ul class="list-group">
+  <li class="list-group-item text-center h5" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%); color: black;">Markalar</li>
   <li (click)="cleanCurrentBrand()" [class]="getAllBrandClass()" routerLink = "/cars">Tüm Markalar</li>
   <li (click)="setCurrentBrand(brand)"
   routerLink = "/cars/brands/{{brand.brandId}}"
@@ -34,4 +34,28 @@
   *ngFor ="let brand of brands">
   {{brand.brandName}}
   </li>
-</ul>
+</ul> -->
+
+
+
+<div class="wrapper">
+  <li class="list-group list-group-item list-group-item-success text-center h5 mb-1" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%); color: black;">Markalar</li>
+  <ul>
+    <li>
+      <input type="checkbox" id="list-item-2">
+      <label for="list-item-2" class="second">Marka Seçin</label>
+      <ul>
+        <li (click)="cleanCurrentBrand()" [class]="getAllBrandClass()" routerLink = "/cars">Tüm Markalar</li>
+        <li (click)="setCurrentBrand(brand)"
+        routerLink = "/cars/brands/{{brand.brandId}}"
+        [class]="getCurrentBrandClass(brand)"
+        *ngFor ="let brand of brands">
+        {{brand.brandName}}
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+  </div>
+
+ <h5 *ngIf="currentBrand">{{currentBrand.brandName}} rengindeki araçlar listeleniyor..</h5>

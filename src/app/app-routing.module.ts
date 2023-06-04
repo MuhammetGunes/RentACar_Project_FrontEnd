@@ -16,6 +16,8 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { UserComponent } from './components/user/user.component';
+import { ContactUsComponent } from './components/contact-us/contact-us/contact-us.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full", component:CarComponent},
@@ -39,7 +41,9 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
   {path:"cars/update:userId", component:UserComponent},
-  {path:"profile", component:UserComponent}
+  {path:"profile", component:UserComponent},
+  {path:"contact", component:ContactUsComponent},
+  {path:"about", component:AboutComponent}
 ];
 
 @NgModule({

@@ -37,18 +37,19 @@
     <app-color></app-color>
   </div>
   <div class="col-md-4">
-    <li class="list-group list-group-item text-center h5 mb-3" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%);">Hızlı Araç Ara</li>
-    <div class="mb-3">
+    <li class="list-group list-group-item list-group-item-success text-center h5 mb-1" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%); color: black;">Hızlı Araç Ara</li>
+    <div>
       <input type="text" id="filterText" [(ngModel)]="filterText" class="form-control" id="exampleFormControlInput1" placeholder="Araç modeli giriniz..">
     </div>
-    <div *ngIf="filterText.length>0" class="alert alert-success">
-      {{filterText}} modelini aradınız..
-    </div>
+
   </div>
 </div>
 
 
 <div class="container-fluid bg-gradient p-5">
+  <div *ngIf="filterText.length>0" class="alert alert-danger">
+    <i class="bi bi-caret-down-square-fill"></i>   Bu aracı mı aradınız ? :   {{filterText}}
+  </div>
   <div id="row-div-style" class="row align-items-start text-center">
      <div *ngFor="let car of cars | filterCarPipe:filterText" class="col-9 col-sm-3 princing-item blue">
 
@@ -79,9 +80,9 @@
         </div>
         <div class="card-body bg-white mt-0 shadow">
            <ul class="list-unstyled mb-5 position-relative">
-              <!-- <li><b>Renk: </b>{{ car.colorName }}</li> -->
+              <!-- <li><b>Marka: </b>{{ car.br }}</li> -->
               <li><b>Model Yılı: </b>{{ car.modelYear }}</li>
-              <li><b>Açıklama: </b>{{ car.description }}</li>
+              <li><b>Model: </b>{{ car.description }}</li>
            </ul>
            <button type="button" class="btn btn-lg btn-block  btn-custom"
            routerLink="/cars/carDetail/{{car.id}}">Detayları Gör</button>

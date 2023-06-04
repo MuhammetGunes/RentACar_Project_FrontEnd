@@ -34,6 +34,8 @@ import { ColorUpdateComponent } from './components/color-update/color-update.com
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { UserComponent } from './components/user/user.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactUsComponent } from './components/contact-us/contact-us/contact-us.component';
+import { AboutComponent } from './components/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +63,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CarUpdateComponent,
     UserComponent,
     FooterComponent,
+    ContactUsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

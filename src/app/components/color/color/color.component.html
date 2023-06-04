@@ -23,12 +23,35 @@
 
 <!-- <h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5> -->
 
-<ul class="list-group">
-  <li class="list-group-item list-group-item-success text-center h5" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%);">Renkler</li>
+<!-- <ul class="list-group">
+  <li class="list-group-item list-group-item-success text-center h5" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%); color: black;">Renkler</li>
   <li (click)="cleanCurrentColor()" [class]="getAllColorClass()" routerLink = "/cars">Tüm Renkler</li>
   <li (click)="setCurrentColor(color)"
   [class]="getCurrentColorClass(color)"
   routerLink = "/cars/colors/{{color.colorId}}"
   *ngFor="let color of colors">
   {{color.colorName}}</li>
-</ul>
+</ul> -->
+
+
+
+<div class="wrapper">
+  <li class="list-group list-group-item list-group-item-success text-center h5 mb-1" style="background: linear-gradient(90deg, rgba(212,111,83,0.742734593837535) 0%, rgba(255,171,0,0.6026785714285714) 100%); color: black;">Renkler</li>
+  <ul>
+    <li>
+      <input type="checkbox" id="list-item-1">
+      <label for="list-item-1" class="first">Renk Seçin</label>
+      <ul>
+        <li (click)="cleanCurrentColor()" [class]="getAllColorClass()" routerLink = "/cars">Tüm Renkler</li>
+        <li (click)="setCurrentColor(color)"
+  [class]="getCurrentColorClass(color)"
+  routerLink = "/cars/colors/{{color.colorId}}"
+  *ngFor="let color of colors">
+  {{color.colorName}}</li>
+      </ul>
+    </li>
+
+  </ul>
+  </div>
+
+ <h5 *ngIf="currentColor">{{currentColor.colorName}} rengindeki araçlar listeleniyor..</h5>

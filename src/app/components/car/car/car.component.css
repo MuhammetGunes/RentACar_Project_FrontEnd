@@ -104,3 +104,18 @@
   min-width: 0;
   word-wrap: break-word;
   }
+
+  input{
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: #0275d8;
+    color: white;
+    border-bottom: none;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
